@@ -665,112 +665,108 @@
 
         /* ===== GALLERY SECTION CSS ===== */
 
-#gallery{
-    padding:80px 0;
-    background:linear-gradient(135deg, rgba(177,159,217,0.06) 0%, rgba(155,125,216,0.06) 100%);
+#gallery {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(177,159,217,0.06) 0%, rgba(155,125,216,0.06) 100%);
 }
 
-.options{
-    display:flex;
-    gap:12px;
-    width:90%;
-    height:350px;
-    margin:auto;
+.gallery-hint {
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: cursive;
 }
 
-.option{
-    flex:1;
-    border-radius:25px;
-    overflow:hidden;
-    position:relative;
-    cursor:pointer;
-    background-image:var(--optionImage);
-    background-size:cover;
-    background-position:center;
-    transition:0.6s ease;
-    box-shadow:0 8px 32px rgba(222, 221, 226, 0.877);
+.options {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 20px 20px;
+    scrollbar-width: none;
 }
 
-.option.active{
-    flex:4;
+.options::-webkit-scrollbar {
+    display: none;
 }
 
-.option:not(.active){
-    filter:brightness(0.55);
+.option {
+    flex: 0 0 280px;
+    height: 350px;
+    scroll-snap-align: center;
+    border-radius: 20px;
+    background-image: var(--optionImage);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 8px 32px rgba(139, 125, 217, 0.15);
 }
 
-.option::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(251, 249, 249, 0.2);
+.option.active {
+    transform: scale(1.04);
+    box-shadow: 0 12px 40px rgba(139, 125, 217, 0.3);
 }
 
-.label{
-    position:absolute;
-    bottom:20px;
-    left:20px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:#fff;
-    opacity:0;
-    transition:0.4s ease;
-    z-index:2;
+.option:not(.active) {
+    filter: brightness(0.55);
 }
 
-.option.active .label{
-    opacity:1;
+.label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
 }
 
-.icon{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:rgba(23, 4, 4, 0.9);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:22px;
-    
+.option.active .label {
+    opacity: 1;
 }
 a{
     text-decoration: none;
 }
 
-.info{
-    display:flex;
-    flex-direction:column;
+.icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(23, 4, 4, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
 }
 
-.main{
-    font-size:1.1rem;
+.main {
+    font-size: 1.1rem;
     font-family: cursive;
-    font-weight:bolder;
+    font-weight: bolder;
     color: rgb(61, 4, 87);
-    background-color:rgba(166, 95, 182, 0.447);
-    border-width: 2px;
-    border-color:black;
-    border-style:solid;
+    background-color: rgba(166, 95, 182, 0.447);
+    border: 2px solid black;
     border-radius: 20px;
-    padding:10px
+    padding: 10px;
 }
 
-
-@media(max-width:768px){
-    .options{
-        height:260px;
-    }
-
-    .main{
-        font-size:0.95rem;
-    }
-
-    .sub{
-        font-size:0.75rem;
+@media (max-width: 768px) {
+    .option {
+        flex: 0 0 75vw;
+        height: 260px;
     }
 }
 
+@media (max-width: 480px) {
+    .option {
+        flex: 0 0 85vw;
+        height: 220px;
+    }
+}
         /* ===== CONTACT SECTION ===== */
         #contact {
             background: linear-gradient(135deg, rgba(177, 159, 217, 0.04) 0%, rgba(155, 125, 216, 0.04) 100%);

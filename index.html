@@ -395,7 +395,6 @@ let timer;
 function setActive(index) {
     options.forEach(o => o.classList.remove("active"));
     options[index].classList.add("active");
-    options[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     currentIndex = index;
 }
 
@@ -409,6 +408,7 @@ function startTimer() {
 
 options.forEach((option, index) => {
     option.addEventListener("click", () => {
+        option.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         setActive(index);
         startTimer();
     });

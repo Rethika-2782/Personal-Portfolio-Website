@@ -5,7 +5,7 @@ Welcome to my personal portfolio website! This portfolio serves as a digital sho
 ## 🚀 Live Demo
 
 🔗 Visit Portfolio:
-https://rethika-2782.github.io/Personal-Portfolio-Website-Elevate-Labs-Task-5/
+[https://rethika-2782.github.io/Personal-Portfolio-Website-Elevate-Labs-Task-5/](https://rethika-2782.github.io/Rethika-S-Full-Stack-Developer/)
 
 ---
 
